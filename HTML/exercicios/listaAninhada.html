@@ -1,0 +1,70 @@
+<style>
+    span {
+        cursor: pointer;
+    }
+    span:hover{
+        color: #E01;
+    }
+</style>
+
+<h1>Projeto</h1>
+
+<ul class="tree">
+    <li>
+        <!--O wm-folder é uma palavra que criei e funciona como um ID ou uma CLASS-->    
+        <span wm-folder>Back-end</span> 
+        <ul>
+            <li>
+                <span wm-folder>app</span>
+                <ul>
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+            <li>
+                <span wm-folder>config</span>
+                <ul>
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span wm-folder>Front-end</span>
+        <ul>
+            <li>
+                <span wm-folder>public</span>
+                <ul>
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<script>
+    var elements = document.querySelectorAll('[wm-folder]');
+    
+    elements.forEach(folder => {
+        folder.onclick = function(e){
+            const ul = folder.nextElementSibling;//Próximo elemento HTML
+            const tela = ul.style.display;
+            
+            ul.style.display = screen;
+
+            if(screen === 'none'){
+                screen = 'block';
+            }else{
+                screen = 'none';
+            }
+        }
+    });
+
+</script>
+
